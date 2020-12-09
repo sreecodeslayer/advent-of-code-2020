@@ -25,7 +25,7 @@ defmodule Passport do
 
     path
     |> File.stream!()
-    |> Enum.chunk_while([], chunk_by_empty_new_line, after_chunk)
+    |> Stream.chunk_while([], chunk_by_empty_new_line, after_chunk)
   end
 
   defp count_valid_passports(passports) do
